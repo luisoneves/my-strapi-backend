@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "configuracao_gerals",
+  "info": {
+    "singularName": "configuracao-geral",
+    "pluralName": "configuracao-gerals",
+    "displayName": "ConfiguracaoGeral"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nomeDoSite": {
+      "type": "string"
+    },
+    "descricaoSite": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "menuPrincipal": {
+      "type": "component",
+      "component": "layout.link-menu",
+      "repeatable": true
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "emailContato": {
+      "type": "email"
+    },
+    "endereco": {
+      "type": "text"
+    },
+    "textoRodape": {
+      "type": "string"
+    },
+    "redesSociais": {
+      "type": "component",
+      "component": "layout.rede-social",
+      "repeatable": true
+    }
+  }
+}

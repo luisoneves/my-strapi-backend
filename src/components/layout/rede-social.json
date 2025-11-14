@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_rede_socials",
+  "info": {
+    "displayName": "RedeSocial"
+  },
+  "options": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
