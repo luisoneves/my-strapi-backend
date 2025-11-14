@@ -1,29 +1,27 @@
-# Use a imagem oficial do Node.js v20
-FROM node:20-alpine AS base
-# Instale dependências de sistema para 'sharp' e outras compilações
-RUN apk update && apk add --no-cache libc6-compat build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+FROM node:20-alpine
 
-# Build Stage - Constrói o painel de admin
-FROM base AS build
+# Instala dependências necessárias
+RUN apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git
+
 WORKDIR /app
+
+# Copia arquivos de dependências
+COPY package.json package-lock.json ./
+
+# Instala dependências
+RUN npm ci --only=production
+
+# Copia o código da aplicação
 COPY . .
+
+# Constrói o Strapi
 RUN npm run build
 
-# Production Stage - A imagem final e enxuta
-FROM base AS production
-WORKDIR /app
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/node_modules ./node_modules
-COPY package.json .
-
-# Copia o script de inicialização
-COPY start.sh ./
-
-# Exponha a porta em que o Strapi vai rodar
+# Expõe a porta
 EXPOSE 1337
 
-# Usa o script de inicialização
+# Script de inicialização
+COPY start.sh ./
+RUN chmod +x start.sh
+
 CMD ["./start.sh"]
