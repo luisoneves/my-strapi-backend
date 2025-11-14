@@ -22,6 +22,8 @@ COPY package.json .
 # Copia o script de inicialização
 COPY start.sh ./
 
+# Exponha a porta em que o Strapi vai rodar
 EXPOSE 1337
+
 # Usa o script de inicialização
 CMD ["./start.sh"]
