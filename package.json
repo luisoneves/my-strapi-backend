@@ -18,8 +18,8 @@
     "@strapi/plugin-cloud": "5.31.0",
     "@strapi/plugin-users-permissions": "5.31.0",
     "@strapi/strapi": "5.31.0",
-    "pg": "^8.12.0",
-    "pg-connection-string": "^2.9.1",
+    "pg": "8.7.3",
+    "pg-connection-string": "2.5.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -31,6 +31,9 @@
     "@types/react-dom": "^18",
     "better-sqlite3": "12.4.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "pg": "8.7.3"
   },
   "engines": {
     "node": ">=20.0.0 <=24.x.x",

@@ -7,6 +7,9 @@ module.exports = ({ env }) => ({
         rejectUnauthorized: false,
       },
     },
+    // --- ADICIONE ESTA LINHA ---
+    driver: 'pg-native',
+    // -------------------------
     debug: false,
   },
 });
