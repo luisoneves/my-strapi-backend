@@ -22,6 +22,6 @@ COPY package.json .
 # ----> ADICIONE ESTA LINHA PARA COPIAR O SCRIPT <----
 COPY start.sh ./
 
-EXPOSE 1337
+PORT 1337
 # ----> MUDE O CMD PARA USAR O SCRIPT <----
 CMD ["./start.sh"]
