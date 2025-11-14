@@ -1,15 +1,14 @@
 module.exports = ({ env }) => ({
-  connection: {
-    client: 'postgres',
+  database: {
     connection: {
-      connectionString: env('DATABASE_URL'),
-      ssl: {
-        rejectUnauthorized: false,
+      client: 'postgres',
+      connection: {
+        connectionString: env('DATABASE_URL'),
+        ssl: {
+          rejectUnauthorized: false,
+        },
       },
+      debug: false,
     },
-    // --- ADICIONE ESTA LINHA ---
-    driver: 'pg-native',
-    // -------------------------
-    debug: false,
-  },
+  }
 });
